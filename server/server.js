@@ -72,14 +72,19 @@ server.listen(appProp.port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-socket.on('connection', function(client) {
-	console.log("Client is connected");
+socket.on('connection', function(socket) {
+	console.log("Client " + socket.id + " is connected");
 
-	client.emit('isConfReady', {
+	socket.emit('isConfReady', {
 		isReady: true
 	});
 
-	client.on("pushConf", function(data) {
+	socket.on("pushConf", function(data) {
 		console.log('Data on Server: ', data);
+
+		socket.emit("acknowledge", {
+			"message": data
+		});
+
 	});
 });
