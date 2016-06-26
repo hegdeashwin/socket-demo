@@ -22,12 +22,6 @@ var config = {
       query: {
         presets: ['es2015', 'react']
       }
-    }, {
-      test: /\.(jpg|jpeg|png|gif|svg)$/i,
-      loader: 'file'
-    }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
     }]
   }
 };
