@@ -5,7 +5,7 @@ import { createHashHistory } from 'history';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
-import App from '../App.js';
+import App from './App.js';
 
 import Home from './Home.jsx';
 
